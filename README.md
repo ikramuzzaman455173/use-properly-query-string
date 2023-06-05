@@ -29,7 +29,7 @@ const navigate = useNavigate()
 
 ### setpe-3 last step:)
 
-```
+```jsx
   const [params, setParams] = useSearchParams()
   const category = params.get('category')
   const [rooms, setRooms] = useState([])
