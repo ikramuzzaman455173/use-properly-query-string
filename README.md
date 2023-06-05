@@ -26,3 +26,27 @@ const navigate = useNavigate()
     navigate(url)
   }
 ```
+
+### setpe-3 last step:)
+
+```
+  const [params, setParams] = useSearchParams()
+  const category = params.get('category')
+  const [rooms, setRooms] = useState([])
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setLoading(true)
+    fetch(`/Rooms.json`)
+      .then(response => response.json())
+      .then(data => {
+        if (category) {
+          const filtered = data.filter(room => room.category === category)
+          setRooms(filtered)
+        }
+        else {
+          setRooms(data)
+        }
+        setLoading(false)
+      }).catch(error => console.log(`404 page not found ${error}`))
+  }, [category])
+  ```
