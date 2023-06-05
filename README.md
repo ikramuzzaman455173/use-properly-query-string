@@ -11,8 +11,6 @@ npm install query-string
 ```jsx
 const navigate = useNavigate()
   const [params, setParams] = useSearchParams()
-  const value = params.get('category')
-
   const handleClick = () => {
     let currentQuery = {}
     if (params) {
